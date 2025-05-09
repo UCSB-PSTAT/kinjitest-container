@@ -4,8 +4,10 @@ MAINTAINER LSIT Systems <lsitops@lsit.ucsb.edu>
 
 USER root
 
-#RUN mamba install -y astropy <libraries>
-
-#RUN pip install <libraries>
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        tree zip \
+    && apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 USER $NB_USER
