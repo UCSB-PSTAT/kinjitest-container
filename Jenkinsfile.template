@@ -4,7 +4,7 @@ pipeline {
         upstream(upstreamProjects: 'UCSB-PSTAT GitHub/jupyter-base/main', threshold: hudson.model.Result.SUCCESS)
     }
     environment {
-        IMAGE_NAME = '<COURSE/IMAGE ID HERE>'
+        IMAGE_NAME = 'kinjitest-container'
     }
     stages {
         stage('Build Test Deploy') {
